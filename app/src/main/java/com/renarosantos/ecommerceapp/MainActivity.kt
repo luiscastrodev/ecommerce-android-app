@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.loadProductList()
     }
 
-    private fun updateUI(viewState : ProductListViewState) {
+
+       private fun updateUI(viewState : ProductListViewState) {
         when(viewState){
             is ProductListViewState.Content -> {
                 binding.errorView.isVisible = false

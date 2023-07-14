@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.presentation.view
+package com.renarosantos.ecommerceapp.presentation
 
 import android.os.Bundle
 import androidx.activity.viewModels

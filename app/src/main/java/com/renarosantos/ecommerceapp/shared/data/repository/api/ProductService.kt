@@ -1,7 +1,7 @@
-package com.renarosantos.ecommerceapp.data.repository.api
+package com.renarosantos.ecommerceapp.shared.data.repository.api
 
-import com.renarosantos.ecommerceapp.data.entities.ProductDetailsEntity
-import com.renarosantos.ecommerceapp.data.entities.ProductEntity
+import com.renarosantos.ecommerceapp.product_details.data.ProductDetailsEntity
+import com.renarosantos.ecommerceapp.product_list.data.ProductEntity
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,5 +12,4 @@ interface ProductService {
 
     @GET("productDetails")
     suspend fun getProductDetails(@Query("productId") productId: String): ProductDetailsEntity
-
 }

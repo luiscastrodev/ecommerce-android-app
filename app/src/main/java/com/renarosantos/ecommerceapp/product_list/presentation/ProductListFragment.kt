@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.presentation.view
+package com.renarosantos.ecommerceapp.product_list.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,18 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductCardViewState
-import com.renarosantos.ecommerceapp.presentation.ProductListViewModel
-import com.renarosantos.ecommerceapp.presentation.viewstate.ProductListViewState
 import com.renarosantos.ecommerceapp.databinding.ProductListFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class ProductListFragment : Fragment() {
     private lateinit var binding: ProductListFragmentBinding
     private val viewModel: ProductListViewModel by viewModels()
-    private val adapter = ProductCardListAdapter(::onItemClicked)
+    private val adapter = ProductCardListAdapter(::onItemClicked, ::onFavoriteIconClicked)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,5 +62,9 @@ class ProductListFragment : Fragment() {
     // parameter just to show how to retrieve data from Adapter to the fragment
     private fun onItemClicked(viewState: ProductCardViewState) {
         findNavController().navigate(ProductListFragmentDirections.actionProductListFragmentToProductDetailsFragment())
+    }
+
+    private fun onFavoriteIconClicked(viewState: ProductCardViewState){
+        viewModel.favoriteIconClicked(viewState.id)
     }
 }

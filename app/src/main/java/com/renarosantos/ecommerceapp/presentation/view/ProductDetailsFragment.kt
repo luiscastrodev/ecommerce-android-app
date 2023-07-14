@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.view
+package com.renarosantos.ecommerceapp.presentation.view
 
 
 import android.os.Bundle

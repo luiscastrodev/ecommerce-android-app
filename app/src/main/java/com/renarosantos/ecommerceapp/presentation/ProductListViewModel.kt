@@ -1,9 +1,12 @@
-package com.renarosantos.ecommerceapp
+package com.renarosantos.ecommerceapp.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.renarosantos.ecommerceapp.data.repository.ProductRepository
+import com.renarosantos.ecommerceapp.presentation.viewstate.ProductCardViewState
+import com.renarosantos.ecommerceapp.presentation.viewstate.ProductListViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

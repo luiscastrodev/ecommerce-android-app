@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp
+package com.renarosantos.ecommerceapp.data.entities
 
 import com.google.gson.annotations.SerializedName
 

@@ -4,14 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.delay
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductListViewModel : ViewModel() {
+@HiltViewModel
+class ProductListViewModel @Inject constructor(
+    private val repository: ProductRepository
+) : ViewModel() {
 
     private val _viewState = MutableLiveData<ProductListViewState>()
     val viewState: LiveData<ProductListViewState> get() = _viewState
-    private val repository = ProductRepository()
 
     fun loadProductList() {
         val productItems = (1..3).map { product ->

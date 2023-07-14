@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.transition.TransitionInflater
 import com.bumptech.glide.Glide
 import com.renarosantos.ecommerceapp.databinding.ProductDetailsFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProductDetailsFragment : Fragment() {
     private lateinit var binding: ProductDetailsFragmentBinding
 
